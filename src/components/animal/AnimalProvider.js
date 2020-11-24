@@ -31,8 +31,8 @@ export const AnimalProvider = (props) => {
 
     /*
         You return a context provider which has the
-        `locations` state, the `addLocation` function,
-        and the `getLocation` function as keys. This
+        `animals` state, the `addAnimal` function,
+        and the `getAnimal` function as keys. This
         allows any child elements to access them.
     */
     return (

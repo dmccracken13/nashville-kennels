@@ -31,8 +31,8 @@ export const EmployeeProvider = (props) => {
 
     /*
         You return a context provider which has the
-        `locations` state, the `addLocation` function,
-        and the `getLocation` function as keys. This
+        `employees` state, the `addEmployee` function,
+        and the `getEmployee` function as keys. This
         allows any child elements to access them.
     */
     return (
