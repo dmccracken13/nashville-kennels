@@ -13,7 +13,7 @@ export const CustomerList = () => {
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        console.log("CustomerList: Initial render before data")
+        // console.log("CustomerList: Initial render before data")
         getCustomers()
     }, [])
 
@@ -22,8 +22,8 @@ export const CustomerList = () => {
         it is responding to is that the customer state changed.
     */
     useEffect(() => {
-        console.log("CustomerList: Customer state changed")
-        console.log(customers)
+        // console.log("CustomerList: Customer state changed")
+        // console.log(customers)
     }, [customers])
 
     return (
