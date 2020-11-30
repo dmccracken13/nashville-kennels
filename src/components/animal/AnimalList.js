@@ -16,7 +16,7 @@ export const AnimalList = () => {
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        console.log("AnimalList: Initial render before data")
+        // console.log("AnimalList: Initial render before data")
         getLocations()
         .then(getCustomers)
         .then(getAnimals)
