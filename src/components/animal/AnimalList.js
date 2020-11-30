@@ -5,7 +5,7 @@ import { CustomerContext } from "../customer/CustomerProvider"
 import { Animal } from "./Animal"
 import "./Animal.css"
 
-export const AnimalList = () => {
+export const AnimalList = (props) => {
     // This state changes when `getAnimals()` is invoked below
     const { animals, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
@@ -33,6 +33,9 @@ export const AnimalList = () => {
 
     return (
         <div className="animals">
+            <button onClick={() => props.history.push("/animals/create")}>
+            Make Appointment
+            </button>
             {animals.map(animal => {
         const owner = customers.find(c => c.id === animal.customerId)
         const clinic = locations.find(l => l.id === animal.locationId)
