@@ -28,6 +28,10 @@ export const AnimalProvider = (props) => {
         })
             .then(getAnimals)
     }
+    const getAnimalById = (id) => {
+        return fetch(`http://localhost:8088/animals/${ id }?_expand=location&_expand=customer`)
+            .then(res => res.json())
+    }
 
     /*
         You return a context provider which has the
@@ -37,7 +41,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, addAnimal, getAnimals
+            animals, addAnimal, getAnimals, getAnimalById
         }}>
             {props.children}
         </AnimalContext.Provider>
