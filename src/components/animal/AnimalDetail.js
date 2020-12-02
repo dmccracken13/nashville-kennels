@@ -3,7 +3,7 @@ import { AnimalContext } from "./AnimalProvider"
 import "./Animal.css"
 
 export const AnimalDetails = (props) => {
-    const { releaseAnimal, getAnimalById } = useContext(AnimalContext)
+    const { animals, releaseAnimal, getAnimalById } = useContext(AnimalContext)
 
     const [animal, setAnimal] = useState({ location: {}, customer: {}})
 
@@ -21,7 +21,7 @@ export const AnimalDetails = (props) => {
             <div className="animal__owner">Customer: {animal.customer.name}</div>
             <button onClick={
                 () => {
-                    releaseAnimal(animal)
+                    releaseAnimal(animal.id)
                         .then(() => {
                             props.history.push("/animals")
                         })
@@ -35,3 +35,4 @@ export const AnimalDetails = (props) => {
         </section>
     )
 }
+

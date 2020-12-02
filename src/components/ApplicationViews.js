@@ -39,8 +39,8 @@ export const ApplicationViews = (props) => {
                         } />
                         <Route exact path="/animals" render={
                             props => <> 
-                                            <AnimalSearch />
-                                            <AnimalList {...props} />
+                                        <AnimalSearch />
+                                        <AnimalList {...props} />
                                     </>
                         } />
                         <Route exact path="/animals/create" render={
