@@ -9,8 +9,8 @@ export const AnimalForm = (props) => {
     const { customers, getCustomers } = useContext(CustomerContext)
     const { animals, addAnimal, getAnimals, updateAnimal } = useContext(AnimalContext)
 
-    const name = useRef(null)
-    const location = useRef(null)
+    // const name = useRef(null)
+    // const location = useRef(null)
 
     // Component state
     const [animal, setAnimal] = useState({})
@@ -100,7 +100,7 @@ export const AnimalForm = (props) => {
                     <input type="text" name="name" required autoFocus className="form-control"
                         proptype="varchar"
                         placeholder="Animal name"
-                        defaultValue={animal.name}
+                        value={animal.name}
                         onChange={handleControlledInputChange}
                     />
                 </div>
@@ -111,7 +111,7 @@ export const AnimalForm = (props) => {
                     <input type="text" name="breed" required className="form-control"
                         proptype="varchar"
                         placeholder="Animal breed"
-                        defaultValue={animal.breed}
+                        value={animal.breed}
                         onChange={handleControlledInputChange}
                     />
                 </div>
