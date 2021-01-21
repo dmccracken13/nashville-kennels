@@ -73,8 +73,9 @@ export const AnimalForm = (props) => {
                     id: animal.id,
                     name: animal.name,
                     breed: animal.breed,
+                    status: animal.status,
                     locationId: locationId,
-                    treatment: animal.treatment,
+                    // treatment: animal.treatment,
                     customerId: parseInt(localStorage.getItem("kennel_customer"))
                 })
                     .then(() => props.history.push("/animals"))
@@ -82,8 +83,9 @@ export const AnimalForm = (props) => {
                 addAnimal({
                     name: animal.name,
                     breed: animal.breed,
+                    status: animal.status,
                     locationId: locationId,
-                    treatment: animal.treatment,
+                    // treatment: animal.treatment,
                     customerId: parseInt(localStorage.getItem("kennel_customer"))
                 })
                     .then(() => props.history.push("/animals"))
@@ -118,6 +120,17 @@ export const AnimalForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
+                    <label htmlFor="status">Animal status: </label>
+                    <input type="text" name="status" required className="form-control"
+                        proptype="varchar"
+                        placeholder="Animal status"
+                        value={animal.status}
+                        onChange={handleControlledInputChange}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
                     <label htmlFor="locationId">Location: </label>
                     <select name="locationId" className="form-control"
                         proptype="int"
@@ -133,7 +146,7 @@ export const AnimalForm = (props) => {
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="treatment">Treatments: </label>
                     <textarea type="text" name="treatment" className="form-control"
@@ -142,7 +155,7 @@ export const AnimalForm = (props) => {
                         onChange={handleControlledInputChange}>
                     </textarea>
                 </div>
-            </fieldset>
+            </fieldset> */}
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
